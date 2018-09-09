@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ question.title }}</title>
+</head>
+<body>
+
+<!--<h1>{{ question.title }}</h1>-->
+<div>
+    <textarea title="{{ question.title }}"> {{ question.text }} </textarea>
+</div>
+
+{% for answer in answers %}
+   <div>
+       <textarea title="{{ answer.author.username }}"> {{answer.text}} </textarea>
+   </div>
+{% endfor %}
+
+</body>
+</html>

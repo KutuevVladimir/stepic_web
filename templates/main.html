@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q&A</title>
+</head>
+<body>
+    <h1>Questions and answers</h1>
+    <nav>
+        <ul class="paginator">
+            {% for page_number in paginator.page_range %}
+                {% if page_number == page.number %}
+                <li class="active">
+                {% else %}
+                <li>
+                {% endif %}
+                    <a href="{{ paginator.baseurl }}?page={{ page_number }}"> {{ page_number }} </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</body>
+</html>

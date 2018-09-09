@@ -1,12 +1,9 @@
 from django.conf.urls import url
-from qa.views import test
+from qa.views import main, question_by_id
+from qa.views import popular
 
 urlpatterns = [
-    url(r'^$', test),
-    url(r'login/$', test),
-    url(r'signup/$', test),
-    url(r'question/\d+/$', test),
-    url(r'ask/$', test),
-    url(r'popular/$', test),
-    url(r'new/$', test),
+    url(r'^$', main, name='main-page'),
+    url(r'^popular/$', popular, name='popular-questions'),
+    url(r'question/(?P<id>\d+)/', question_by_id, name='question')
 ]

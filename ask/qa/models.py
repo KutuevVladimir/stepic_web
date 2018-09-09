@@ -23,6 +23,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
+    objects = models.Manager()
     text = models.TextField()
     added_at = models.DateField()
     question = models.ForeignKey(Question, on_delete=models.CASCADE)

@@ -1,5 +1,6 @@
-sudo /etc/init.d/mysql start
-mysql -uroot -e "CREATE DATABASE stepic_db;"
-mysql -uroot -e "CREATE USER 'django@localhost' IDENTIFIED BY 'pass123';"
-mysql -uroot -e "GRANT ALL ON djbase.* TO 'django@localhost';"
-mysql -uroot -e "FLUSH PRIVILEGES;"
+#!/usr/bin/env bash
+sudo /etc/init.d/mysql restart
+mysql -u root -e "CREATE DATABASE stepic_db;"
+mysql -u root -e "CREATE USER 'django'@'localhost' IDENTIFIED BY 'sql';"
+mysql -u root -e "GRANT ALL ON stepic_db.* TO 'django'@'localhost';"
+mysql -u root -e "FLUSH PRIVILEGES;"
