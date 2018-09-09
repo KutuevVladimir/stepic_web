@@ -6,6 +6,9 @@
 </head>
 <body>
     <h1>Popular questions</h1>
+    {% for question in page.object_list %}
+        <a href="{{ question.get_absolute_url() }}">question.title</a>
+    {% endfor %}
     <nav>
         <ul class="paginator">
             {% for page_number in paginator.page_range %}

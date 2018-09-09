@@ -21,6 +21,9 @@ class Question(models.Model):
     author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, related_name='authors_questions')
     likes = models.ManyToManyField(User, related_name='question_like_user')
 
+    def get_absolute_url(self):
+        return '/question/%i/' % self.id
+
 
 class Answer(models.Model):
     objects = models.Manager()
