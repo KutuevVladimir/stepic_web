@@ -8,12 +8,9 @@
 
 <h1>{{ question.title }}</h1>
 <text>{{ question.text }}</text>
-<!--<text> {{ question.text }} </textarea>-->
 
 {% for answer in answers %}
-   <div>
-       <text> {{answer.text}} </text>
-   </div>
+   <text> {{answer.text}} </text>
 {% endfor %}
 
 </body>
